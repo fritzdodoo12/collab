@@ -1,0 +1,32 @@
+@import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
+body{
+background-color: white;
+font-family: 'Source Code Pro', monospace;
+font-size: 100%;
+background-repeat:no-repeat;
+display:block;
+overflow:auto;	
+background-size:100% 100%;
+}
+#container {
+	height: 100%;
+width: 90%;
+margin: 0px auto;
+display: block;
+color: white;
+font-style: bold;
+font-size: 2vh;
+background: black;
+}
+textarea{
+width: 90%;
+margin: 0px auto;
+display: block;
+color: white;
+font-style: bold;
+height: 100%;
+background: black;
+}
+#center{
+	text-align: center;
+}

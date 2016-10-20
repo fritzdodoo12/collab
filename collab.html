@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title></title>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="collab.css">
+			<script type="text/javascript">
+				$(document).ready(function(){
+
+					$("#terminal").keyup(function() {
+					//	setInterval(function(){
+							var data = $("form").serialize();
+							//console.log(data);
+						  $.get('https://dvti325b0c.execute-api.us-west-2.amazonaws.com/beta', data, function(new_data){
+						  		//$( "#terminal" ).val(new_data);
+						  })
+
+					//	}, 2000)
+						
+					});
+					setInterval(function(){
+						var data = $("form").serialize();
+						
+						//console.log($( "#terminal" ).val());
+					  $.get('https://dvti325b0c.execute-api.us-west-2.amazonaws.com/beta', function(new_data){
+					  		var old_data = $( "#terminal" ).val();
+					  		if(old_data==new_data){
+					  			console.log("noooooooo")
+					  		}
+					  		else{
+					  			$( "#terminal" ).val(new_data);
+					  		}
+					  		console.log(old_data);
+					  		console.log(new_data);
+					  })
+					}, 2000)
+				});
+			</script>
+</head>
+<body>
+	<div id="container">
+		<h1 id="center">A simple real-time text editor</h1>
+	<form id="form">
+		<textarea id="terminal" name="html" cols="200" rows="50"></textarea>
+		<input type="hidden" name="userid" value="1">
+	</form>
+	</div>
+</body>
+</html>
